@@ -1,4 +1,3 @@
-
 def initializeBoard():
   board = []
   for x in range(8):
@@ -55,17 +54,51 @@ def generatePossibleMoves(board, turn):
 
 board = initializeBoard() 
 drawBoard(board)
-player = raw_input("Choose whether you want to be B or W (B goes first): ")
-opponent = 'B' if player == 'W' else 'B'
-print "Your opponenet is %s" % opponent 
-print player 
-playerTurn = True if player == 'B' else False 
-print generatePossibleMoves(board, player)
+playerA = raw_input("Choose whether you want to be B or W (B goes first): ")
+playerB = 'B' if playerA == 'W' else 'W'
+print "Player B is %s" % playerB 
+playerATurn = True if playerA == 'B' else False 
+print "Whoever is B will go first"
+ 
 while True: 
-	if playerTurn: 
-		possibleMoves = generatePossibleMoves(board, player)
-		x, y = raw_input("Specify which square you would like to move e.g. 3 5 for (3,5) : ")
-		print x, y 
+    possibleMovesPlayerA = generatePossibleMoves(board, playerA)
+    possibleMovesPlayerB = generatePossibleMoves(board, playerB)
+    if len(possibleMovesPlayerA.keys()) == 0 and len(possibleMovesPlayerB.keys()) == 0:
+        break 
+    
+    playerToMove = playerA if playerATurn else playerB
+    possibleMoves = possibleMovesPlayerA if playerATurn else possibleMovesPlayerB
+    if len(possibleMoves.keys()) == 0:
+            print "Nowhere to move; opponent's turn!" 
+            playerTurn = not playerTurn
+            continue
+    moves = raw_input("Specify which square you would like to move e.g. 3 5 for (3,5) : ").split(' ')
+    moveXCoord, moveYCoord = int(moves[0]), int(moves[1])
+    if (moveXCoord, moveYCoord) in possibleMoves:
+        for (coordX, coordY) in possibleMoves[(moveXCoord, moveYCoord)]:
+            board[coordX][coordY] = playerToMove 
+        board[moveXCoord][moveYCoord] = playerToMove
+        playerATurn = not playerATurn
+    else:
+        print "Not a valid move; you can only move in the following squares: "
+        print possibleMoves.keys()
+    
+    drawBoard(board)
+
+countA = 0 
+countB = 0 
+for i in range(8):
+    for j in range(8):
+        if board[i][j] == playerA:
+            countA += 1
+        elif board[i][j] == playerB:
+            countB += 1
+
+print "Player A has a score of %s" % countA
+print "Player B has a score of %s" % countB
+print "%s has won!" % ("Player A" if countA > countB else "Player B")
+
+            
 
 
 
