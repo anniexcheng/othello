@@ -1,6 +1,7 @@
 from HumanPlayer import HumanPlayer
 from RandomMoveAI import RandomMoveAI
 from MoveUtil import generatePossibleMoves
+from MoveUtil import Node
 
 def initializeBoard(N):
   board = []

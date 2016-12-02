@@ -31,3 +31,24 @@ def updateBoard(board, possibleMoves, move, color):
     for (coordX, coordY) in piecesToBeCaptured:
         board[coordX][coordY] = color
     board[move[0]][move[1]] = color
+
+from copy import deepcopy
+class Node:
+    def __init__(self, board, color):
+        self.board = board
+        self.color = color
+        self.children = []
+        self.populateChildren()
+    
+    def getOpponentColor(self):
+        if self.color == 'B':
+            return 'W' 
+        else:
+            return 'B'
+        
+    def populateChildren(self):
+        possibleMoves = generatePossibleMoves(self.board, self.color)
+        for possibleMove in possibleMoves:
+            tempBoard = deepcopy(self.board)
+            updateBoard(tempBoard, possibleMoves, possibleMove, self.color)
+            self.children.append(possibleMove, Node(tempBoard, getOpponentColor()))
