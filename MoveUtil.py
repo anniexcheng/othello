@@ -25,3 +25,9 @@ def generatePossibleMoves(board, turn):
 				if len(capturedSquares) != 0:
 					moveResults[(i,j)] = capturedSquares 
 	return moveResults
+ 
+def updateBoard(board, possibleMoves, move, color):
+    piecesToBeCaptured = possibleMoves[move]
+    for (coordX, coordY) in piecesToBeCaptured:
+        board[coordX][coordY] = color
+    board[move[0]][move[1]] = color
