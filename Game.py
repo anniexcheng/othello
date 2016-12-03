@@ -1,7 +1,6 @@
 from HumanPlayer import HumanPlayer
 from RandomMoveAI import RandomMoveAI
-from MoveUtil import generatePossibleMoves
-from MoveUtil import Node
+from MoveUtil import generatePossibleMoves, getScore, Node
 
 def initializeBoard(N):
   board = []
@@ -50,21 +49,13 @@ def canMove(board, color):
         return False, possibleMoves
     else:
         return True, possibleMoves
-
 # Given the color associated with the two players and the board,
 # determines who has won 
 def endGame(playerXColor, playerYColor, board, N):
-    countX = 0 
-    countY = 0 
-    for i in range(N):
-        for j in range(N):
-            if board[i][j] == playerXColor:
-                countX += 1
-            elif board[i][j] == playerYColor:
-                countY += 1
-    print "Player X has a score of %s" % countX
-    print "Player Y has a score of %s" % countY
-    print "%s has won!" % ("Player X" if countX > countY else "Player Y")
+    counts = getScore(board, playerXColor, playerYColor, N)
+    print "Player X has a score of %s" % counts[0]
+    print "Player Y has a score of %s" % counts[1]
+    print "%s has won!" % ("Player X" if counts[0] > counts[1] else "Player Y")
 
     
 if __name__ == '__main__':

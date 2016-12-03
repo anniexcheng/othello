@@ -25,7 +25,18 @@ def generatePossibleMoves(board, turn):
 				if len(capturedSquares) != 0:
 					moveResults[(i,j)] = capturedSquares 
 	return moveResults
- 
+
+def getScore(board, playerXColor, playerYColor, N):
+    countX = 0 
+    countY = 0 
+    for i in range(N):
+        for j in range(N):
+            if board[i][j] == playerXColor:
+                countX += 1
+            elif board[i][j] == playerYColor:
+                countY += 1
+    return (countX, countY)
+    
 def updateBoard(board, possibleMoves, move, color):
     piecesToBeCaptured = possibleMoves[move]
     for (coordX, coordY) in piecesToBeCaptured:
