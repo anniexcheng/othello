@@ -34,11 +34,14 @@ def updateBoard(board, possibleMoves, move, color):
 
 from copy import deepcopy
 class Node:
-    def __init__(self, board, color):
+    def __init__(self, board, color, level, maxDepth):
         self.board = board
         self.color = color
+        self.level = level
+        self.maxDepth = maxDepth
         self.children = []
-        self.populateChildren()
+        if level < maxDepth: 
+          self.populateChildren()
     
     def getOpponentColor(self):
         if self.color == 'B':
@@ -48,7 +51,10 @@ class Node:
         
     def populateChildren(self):
         possibleMoves = generatePossibleMoves(self.board, self.color)
+        nextLevel = self.level + 1
         for possibleMove in possibleMoves:
             tempBoard = deepcopy(self.board)
             updateBoard(tempBoard, possibleMoves, possibleMove, self.color)
-            self.children.append(possibleMove, Node(tempBoard, getOpponentColor()))
+            self.children.append((possibleMove, Node(tempBoard, self.getOpponentColor(), nextLevel, self.maxDepth)))
+    
+    
