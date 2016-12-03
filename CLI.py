@@ -13,15 +13,20 @@ def choosePlayer(option, color):
         choosePlayer(option)
 
 def othello(N, isExperiment, experimentX, experimentY):
-    board, playerXColor, playerYColor, playerXTurn = Game.initializeGame(N)
-    print "You can either choose to play as a human or have a bot play"
-    print "Please enter your most preferred option" 
-    print "Enter 0 for Human"
-    print "Enter 1 for AI that moves randomly"
-    playerX = choosePlayer(raw_input("Enter your option for Player X: "), playerXColor)
-    playerY = choosePlayer(raw_input("Enter your option for Player Y: "), playerYColor)
+    board, playerXColor, playerYColor, playerXTurn = Game.initializeGame(N, isExperiment)
     
-    return Game.playGame(N, board, playerX, playerY, playerXTurn)
+    if not isExperiment:
+        print "You can either choose to play as a human or have a bot play"
+        print "Please enter your most preferred option" 
+        print "Enter 0 for Human"
+        print "Enter 1 for AI that moves randomly"
+        playerX = choosePlayer(raw_input("Enter your option for Player X: "), playerXColor)
+        playerY = choosePlayer(raw_input("Enter your option for Player Y: "), playerYColor)
+    else: 
+        playerX = choosePlayer(experimentX[0], experimentX[1])
+        playerY = choosePlayer(experimentY[0], experimentY[1])
+    
+    return Game.playGame(N, board, playerX, playerY, playerXTurn, isExperiment)
        
 if __name__ == '__main__':
     othello(8, False, None, None)
