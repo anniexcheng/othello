@@ -1,5 +1,3 @@
-from HumanPlayer import HumanPlayer
-from RandomMoveAI import RandomMoveAI
 from MoveUtil import generatePossibleMoves, getScore, Node
 
 def initializeBoard(N):
@@ -55,21 +53,29 @@ def endGame(playerXColor, playerYColor, board, N):
     counts = getScore(board, playerXColor, playerYColor, N)
     print "Player X has a score of %s" % counts[0]
     print "Player Y has a score of %s" % counts[1]
-    print "%s has won!" % ("Player X" if counts[0] > counts[1] else "Player Y")
 
+    playerXWon = True if counts[0] > counts[1] else False
+    print "%s has won!" % ("Player X" if playerXWon else "Player Y")
+    if playerXWon:
+        return playerXColor
+    else:
+        return playerYColor
     
-if __name__ == '__main__':
-    N = 8
-    board, playerXColor, playerYColor, playerXTurn =initializeGame(N)
-    playerX = HumanPlayer(playerXColor)
-    playerY = HumanPlayer(playerYColor)
+def playGame(N, board, playerX, playerY, playerXTurn):
     while True:
         drawBoard(board, N)
-        playerXCanMove, playerXMoves = canMove(board, playerXColor)
-        playerYCanMove, playerYMoves = canMove(board, playerYColor)
+        playerXCanMove, playerXMoves = canMove(board, playerX.color)
+        playerYCanMove, playerYMoves = canMove(board, playerY.color)
+        if playerXTurn:
+            print "Player X's turn!"
+        else:
+            print "Player Y's turn!" 
+        
+        currentScore = getScore(board, playerX.color, playerY.color, N)
+        print "Current score: Player X: %s vs Player Y: %s" % (currentScore[0], currentScore[1])
+            
         if not (playerXCanMove or playerYCanMove):
-            endGame(playerXColor, playerYColor, board, N)
-            break
+            return endGame(playerX.color, playerY.color, board, N)
         elif playerXTurn and playerXCanMove:
             playerX.move(board, playerXMoves)
             playerXTurn = False
