@@ -23,6 +23,7 @@ def othello(N, isExperiment, experimentX, experimentY):
         print "Please enter your most preferred option" 
         print "Enter 0 for Human"
         print "Enter 1 for AI that moves randomly"
+        print "Enter 2 for AI that naively tries to maximize its next turn" 
         playerX = choosePlayer(raw_input("Enter your option for Player X: "), playerXColor)
         playerY = choosePlayer(raw_input("Enter your option for Player Y: "), playerYColor)
     else: 
