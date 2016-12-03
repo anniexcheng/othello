@@ -1,6 +1,7 @@
 import Game
 from HumanPlayer import HumanPlayer
 from RandomMoveAI import RandomMoveAI
+from OneMoveAI import OneMoveAI
 
 def choosePlayer(option, color):
     option = int(option)
@@ -8,6 +9,8 @@ def choosePlayer(option, color):
         return HumanPlayer(color)
     elif option == 1:
         return RandomMoveAI(color)
+    elif option == 2:
+        return OneMoveAI(color)
     else:
         option = raw_input("Please enter a valid option: ")
         choosePlayer(option)
