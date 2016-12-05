@@ -25,10 +25,23 @@ def experiment2():
         counter[winner] += 1
         i += 1
     return counter
+
+# One Move, Min Max vs Random
+# Trial 1: Counter({'B': 91, 'W': 9})
+def experiment3():
+    counter = Counter()
+    i = 0
+    print "Experiment running..."
+    while i < 100:
+        winner = othello(8, True, (3, 'B'), (1, 'W'))
+        counter[winner] += 1
+        i += 1
+    return counter
     
 if __name__ == '__main__':
     #print experiment1()
-    print experiment2()
+    #print experiment2()
+    print experiment3()
     
     
     

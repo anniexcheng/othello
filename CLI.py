@@ -2,6 +2,7 @@ import Game
 from HumanPlayer import HumanPlayer
 from RandomMoveAI import RandomMoveAI
 from OneMoveAI import OneMoveAI
+from MinMaxAI import MinMaxAI
 
 def choosePlayer(option, color):
     option = int(option)
@@ -11,6 +12,8 @@ def choosePlayer(option, color):
         return RandomMoveAI(color)
     elif option == 2:
         return OneMoveAI(color)
+    elif option == 3:
+        return MinMaxAI(color)
     else:
         option = raw_input("Please enter a valid option: ")
         choosePlayer(option)
@@ -24,6 +27,7 @@ def othello(N, isExperiment, experimentX, experimentY):
         print "Enter 0 for Human"
         print "Enter 1 for AI that moves randomly"
         print "Enter 2 for AI that naively tries to maximize its next turn" 
+        print "Enter 3 for AI that uses the Min-Max algorithm" 
         playerX = choosePlayer(raw_input("Enter your option for Player X: "), playerXColor)
         playerY = choosePlayer(raw_input("Enter your option for Player Y: "), playerYColor)
     else: 
