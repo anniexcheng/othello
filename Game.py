@@ -1,30 +1,30 @@
 from MoveUtil import generatePossibleMoves, getScore
 
 def initializeBoard(N):
-  board = []
-  for x in range(N):
-    board.append([' '] * N)
+    board = []
+    for x in range(N):
+        board.append([' '] * N)
 
-  board[3][3] = 'W'
-  board[4][4] = 'W'
-  board[3][4] = 'B'
-  board[4][3] = 'B'
-  return board 
+    board[3][3] = 'W'
+    board[4][4] = 'W'
+    board[3][4] = 'B'
+    board[4][3] = 'B'
+    return board 
 
 def drawBoard(board, N):
-     HLINE = '  +---+---+---+---+---+---+---+---+'
-     VLINE = '  |   |   |   |   |   |   |   |   |'
+    HLINE = '  +---+---+---+---+---+---+---+---+'
+    VLINE = '  |   |   |   |   |   |   |   |   |'
 
-     print('    0   1   2   3   4   5   6   7')
-     print(HLINE)
-     for y in range(N):
-         print(VLINE)
-         print y,
-         for x in range(N):
-             print '| %s' % (board[x][y]),
-         print('|')
-         print(VLINE)
-         print(HLINE)
+    print('    0   1   2   3   4   5   6   7')
+    print(HLINE)
+    for y in range(N):
+        print(VLINE)
+        print(y, end =" ")
+        for x in range(N):
+            print('| %s' % (board[x][y]), end=" ")
+        print('|')
+        print(VLINE)
+        print(HLINE)
 
 # Initializes the game by setting up the board and determining the color
 # corresponding to each player
@@ -32,12 +32,12 @@ def initializeGame(N, isExperiment):
     if isExperiment:
         return initializeBoard(N), 'B', 'W', True
     else:
-        playerXColor = raw_input("Choose whether you want to be B or W (B goes first): ")
+        playerXColor = input("Choose whether you want to be B or W (B goes first): ")
         playerYColor = 'B' if playerXColor == 'W' else 'W'
-        print "Player X is %s" % playerXColor
-        print "Player Y is %s" % playerYColor
-        playerXTurn = True if playerXColor == 'B' else False 
-        print "Whoever is B will go first"
+        print("Player X is %s" % playerXColor)
+        print("Player Y is %s" % playerYColor)
+        playerXTurn = (playerXColor == 'B') 
+        print("Whoever is B will go first")
         return initializeBoard(N), playerXColor, playerYColor, playerXTurn 
 
 # Given a board and the color associated with the player, checks if
@@ -46,7 +46,7 @@ def initializeGame(N, isExperiment):
 # possibleMoves as second of the pair
 def canMove(board, color):
     possibleMoves = generatePossibleMoves(board, color)
-    if len(possibleMoves.keys()) == 0:
+    if len(list(possibleMoves.keys())) == 0:
         return False, possibleMoves
     else:
         return True, possibleMoves
@@ -56,9 +56,9 @@ def endGame(playerXColor, playerYColor, board, N, isExperiment):
     counts = getScore(board, playerXColor, playerYColor, N)
     playerXWon = True if counts[0] > counts[1] else False
     if not isExperiment:
-        print "Player X has a score of %s" % counts[0]
-        print "Player Y has a score of %s" % counts[1]
-        print "%s has won!" % ("Player X" if playerXWon else "Player Y")
+        print("Player X has a score of %s" % counts[0])
+        print("Player Y has a score of %s" % counts[1])
+        print("%s has won!" % ("Player X" if playerXWon else "Player Y"))
         
     if playerXWon:
         return playerXColor
@@ -70,11 +70,11 @@ def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
         if not isExperiment:
             drawBoard(board, N)
             if playerXTurn:
-                print "Player X's turn!"
+                print("Player X's turn!")
             else:
-                print "Player Y's turn!" 
+                print("Player Y's turn!") 
             currentScore = getScore(board, playerX.color, playerY.color, N)
-            print "Current score: Player X: %s vs Player Y: %s" % (currentScore[0], currentScore[1])
+            print("Current score: Player X: %s vs Player Y: %s" % (currentScore[0], currentScore[1]))
            
         playerXCanMove, playerXMoves = canMove(board, playerX.color)
         playerYCanMove, playerYMoves = canMove(board, playerY.color)
@@ -89,11 +89,11 @@ def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
             playerXTurn = True
         elif not playerXTurn and not playerYCanMove:
             if not isExperiment:
-                print "Player Y cannot move; Player X will move this turn" 
+                print("Player Y cannot move; Player X will move this turn") 
             playerX.move(board, playerXMoves)
         elif playerXTurn and not playerXCanMove:
             if not isExperiment:
-                print "Player X cannot move; Player Y will move this turn"
+                print("Player X cannot move; Player Y will move this turn")
             playerY.move(board, playerYMoves)
             
     

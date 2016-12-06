@@ -7,14 +7,14 @@ from CLI import othello
 def runExperiment(trials, playerB, playerW):
     counter = Counter()
     i = 0
-    print "Experiment running..."
+    print("Experiment running...")
     while i < trials:
         winner = othello(8, True, (playerB, 'B'), (playerW, 'W'))
         counter[winner] += 1
         i += 1
     return counter
 
-# Prints the number of e
+# Prints the experiment corresponding to the number
 def printExperimentResults(number):
     switch = {
         1: experiment1,
@@ -27,7 +27,7 @@ def printExperimentResults(number):
     }
 
     experiment = switch.get(number, "")
-    print experiment()
+    print(experiment())
 
 """ AI Bot Experiments """
 

@@ -23,25 +23,25 @@ def choosePlayer(option, color):
     elif option == 7:
         return MinMaxAI(color, 7)
     else:
-        option = raw_input("Please enter a valid option: ")
+        option = input("Please enter a valid option: ")
         choosePlayer(option)
 
 def othello(N, isExperiment, experimentX, experimentY):
     board, playerXColor, playerYColor, playerXTurn = Game.initializeGame(N, isExperiment)
     
     if not isExperiment:
-        print "You can either choose to play as a human or have a bot play"
-        print "Please enter your most preferred option" 
-        print "Enter 0 for Human"
-        print "Enter 1 for AI that moves randomly"
-        print "Enter 2 for AI that naively tries to maximize its next turn" 
-        print "Enter 3 for AI that uses the Min-Max algorithm looking 3 moves ahead" 
-        print "Enter 4 for AI that uses the Min-Max algorithm looking 4 moves ahead" 
-        print "Enter 5 for AI that uses the Min-Max algorithm looking 5 moves ahead" 
-        print "Enter 6 for AI that uses the Min-Max algorithm looking 6 moves ahead" 
-        print "Enter 7 for AI that uses the Min-Max algorithm looking 7 moves ahead" 
-        playerX = choosePlayer(raw_input("Enter your option for Player X: "), playerXColor)
-        playerY = choosePlayer(raw_input("Enter your option for Player Y: "), playerYColor)
+        print("You can either choose to play as a human or have a bot play")
+        print("Please enter your most preferred option") 
+        print("Enter 0 for Human")
+        print("Enter 1 for AI that moves randomly")
+        print("Enter 2 for AI that naively tries to maximize its next turn") 
+        print("Enter 3 for AI that uses the Min-Max algorithm looking 3 moves ahead") 
+        print("Enter 4 for AI that uses the Min-Max algorithm looking 4 moves ahead") 
+        print("Enter 5 for AI that uses the Min-Max algorithm looking 5 moves ahead") 
+        print("Enter 6 for AI that uses the Min-Max algorithm looking 6 moves ahead") 
+        print("Enter 7 for AI that uses the Min-Max algorithm looking 7 moves ahead") 
+        playerX = choosePlayer(input("Enter your option for Player X: "), playerXColor)
+        playerY = choosePlayer(input("Enter your option for Player Y: "), playerYColor)
     else: 
         playerX = choosePlayer(experimentX[0], experimentX[1])
         playerY = choosePlayer(experimentY[0], experimentY[1])

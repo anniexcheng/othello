@@ -5,7 +5,7 @@ class RandomMoveAI:
         self.color = color
     
     def move(self, board, possibleMoves):
-        moveCoords = possibleMoves.keys()
+        moveCoords = list(possibleMoves.keys())
         chosenMove = random.choice(moveCoords)
         MoveUtil.updateBoard(board, possibleMoves, chosenMove, self.color)
         
