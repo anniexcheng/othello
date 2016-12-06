@@ -1,7 +1,8 @@
 import MoveUtil 
 class MinMaxAI:
-    def __init__(self, color):
+    def __init__(self, color, numMovesAhead):
         self.color = color
+        self.numMovesAhead = numMovesAhead
         self.opponentColor = 'W' if self.color == 'B' else 'B'
         self.pointMatrix =  [ [48,   6,  6,  6,  6,  6,   6, 48,], 
            [ 6, -24, -4, -4, -4, -4, -24,  6,], 
@@ -42,8 +43,7 @@ class MinMaxAI:
         else:
             return moveScorePair[1]
 
-        
     def move(self, board, possibleMoves):
-        gameTree = MoveUtil.Node(board, self.color, 0 , 3)
+        gameTree = MoveUtil.Node(board, self.color, 0, self.numMovesAhead)
         chosenMove = self.minMax(gameTree)
         MoveUtil.updateBoard(board, possibleMoves, chosenMove, self.color)
