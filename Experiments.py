@@ -24,7 +24,7 @@ def printExperimentResults(number):
         4: experiment4, 
         5: experiment5,
         6: experiment6,
-        7: experiment7
+        7: experiment7,
         8: experiment8
     }
 
