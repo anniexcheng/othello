@@ -34,29 +34,31 @@ class MinMaxPrunedAI:
                 return (None, (-1000000, -1000000))  
               
         moveToTake = None 
+        maxTempAlpha = alpha
+        minTempBeta = beta
         for (move, childNode) in node.children:
             if node.level % 2 == 0:
                 tempAlpha = self.minMax(childNode, alpha, beta)[1][1] 
-                if tempAlpha > beta: # pruning
+                if tempAlpha > minTempBeta: # pruning
                     return (moveToTake, (alpha, beta))  
-                if tempAlpha > alpha:
-                    alpha = tempAlpha 
+                if tempAlpha > maxTempAlpha:
+                    maxTempAlpha = tempAlpha 
                     moveToTake = move 
             else: 
                 tempBeta = self.minMax(childNode, alpha, beta)[1][0] 
-                if tempBeta < alpha:
+                if tempBeta < maxTempAlpha: # pruning 
                     return (moveToTake, (alpha, beta))  
-                if tempBeta < beta:
-                    beta = tempBeta
+                if tempBeta < minTempBeta:
+                    minTempBeta = tempBeta
                     moveToTake = move 
           
-            if alpha == beta:
-                return (moveToTake, (alpha, beta)) if node.level != 0 else moveToTake
+            if maxTempAlpha == minTempBeta:
+                return (moveToTake, (maxTempAlpha, minTempbeta)) if node.level != 0 else moveToTake
           
         if node.level == 0:
             return moveToTake
         else:
-            return (moveToTake, (alpha, beta)) 
+            return (moveToTake, (maxTempAlpha, maxTempBeta)) 
 
     def move(self, board, possibleMoves):
         gameTree = MoveUtil.Node(board, self.color, 0, self.numMovesAhead)
