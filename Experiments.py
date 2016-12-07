@@ -25,6 +25,7 @@ def printExperimentResults(number):
         5: experiment5,
         6: experiment6,
         7: experiment7
+        8: experiment8
     }
 
     experiment = switch.get(number, "")
@@ -50,7 +51,7 @@ def experiment4():
 
 # 5 Moves Ahead Min Max (5) vs Random (1)
 def experiment5():
-    return runExperiment(10000, 5, 1)
+    return runExperiment(1000, 5, 1)
 
 # 6 Moves Ahead Min Max (6) vs Random (1)
 def experiment6():
@@ -60,7 +61,11 @@ def experiment6():
 def experiment7():
     return runExperiment(10000, 7, 1)
 
+# 3 Moves Ahead Min Max Pruning (8) vs Random (1)
+def experiment8():
+    return runExperiment(10, 8, 1)
+
 if __name__ == '__main__':
-    time = Timer(lambda: printExperimentResults(1))
+    time = Timer(lambda: printExperimentResults(8))
     print("%0.7f" % time.timeit(number=1))
     

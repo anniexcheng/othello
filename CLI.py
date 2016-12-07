@@ -3,6 +3,7 @@ from HumanPlayer import HumanPlayer
 from RandomMoveAI import RandomMoveAI
 from OneMoveAI import OneMoveAI
 from MinMaxAI import MinMaxAI
+from MinMaxPrunedAI import MinMaxPrunedAI
 
 def choosePlayer(option, color):
     option = int(option)
@@ -22,6 +23,8 @@ def choosePlayer(option, color):
         return MinMaxAI(color, 6)
     elif option == 7:
         return MinMaxAI(color, 7)
+    elif option == 8:
+        return MinMaxPrunedAI(color, 3)
     else:
         option = input("Please enter a valid option: ")
         choosePlayer(option)
@@ -40,6 +43,7 @@ def othello(N, isExperiment, experimentX, experimentY):
         print("Enter 5 for AI that uses the Min-Max algorithm looking 5 moves ahead") 
         print("Enter 6 for AI that uses the Min-Max algorithm looking 6 moves ahead") 
         print("Enter 7 for AI that uses the Min-Max algorithm looking 7 moves ahead") 
+        print("Enter 8 for AI that uses the Min-Max Pruning algorithm looking 3 moves ahead") 
         playerX = choosePlayer(input("Enter your option for Player X: "), playerXColor)
         playerY = choosePlayer(input("Enter your option for Player Y: "), playerYColor)
     else: 
