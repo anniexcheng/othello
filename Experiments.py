@@ -1,5 +1,6 @@
 from collections import Counter
 from CLI import othello
+from timeit import Timer
 
 """ Helper Functions """
 
@@ -60,5 +61,6 @@ def experiment7():
     return runExperiment(10000, 7, 1)
 
 if __name__ == '__main__':
-    printExperimentResults(1)
+    time = Timer(lambda: printExperimentResults(1))
+    print("%0.7f" % time.timeit(number=1))
     
