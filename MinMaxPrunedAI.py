@@ -58,7 +58,7 @@ class MinMaxPrunedAI:
         if node.level == 0:
             return moveToTake
         else:
-            return (moveToTake, (maxTempAlpha, maxTempBeta)) 
+            return (moveToTake, (maxTempAlpha, minTempBeta)) 
 
     def move(self, board, possibleMoves):
         gameTree = MoveUtil.Node(board, self.color, 0, self.numMovesAhead)
