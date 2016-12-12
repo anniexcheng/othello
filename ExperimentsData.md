@@ -46,7 +46,7 @@ B = 3 Moves Ahead Min Max | W = Random
 
 Each game takes on average 3.781 seconds.
 
-## Experiment 3: 4 Moves Ahead Min Max vs Random
+## Experiment 4: 4 Moves Ahead Min Max vs Random
 
 B = 4 Moves Ahead Min Max | W = Random
 
@@ -61,6 +61,22 @@ B = 4 Moves Ahead Min Max | W = Random
 4 Moves Ahead Min Max  AI has a 95.67% win rate.
 
 Each game takes on average 36.222 seconds.
+
+## Experiment 5: 5 Moves Ahead Min Max vs Random
+
+B = 5 Moves Ahead Min Max | W = Random
+
+(100 trials per run)
+
+| Run | Results     | Time          | Winner
+| --- | ----------- | ------------- | ---------------------
+| 1   | B: 99, W: 1 | 38043.4888369 | 5 Moves Ahead Min Max
+| 2   | B: 92, W: 8 | 38314.4652632 | 5 Moves Ahead Min Max
+| 3   | B: 92, W: 8 | 39029.5983387 | 5 Moves Ahead Min Max
+
+5 Moves Ahead Min Max  AI has a 94.33% win rate.
+
+Each game takes on average 384.625 seconds.
 
 
 
