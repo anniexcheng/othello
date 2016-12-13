@@ -45,27 +45,35 @@ def experiment2():
 
 # 3 Moves Ahead Min Max (3) vs Random (1)
 def experiment3():
-    return runExperiment(10000, 3, 1)
+    return runExperiment(100, 3, 1)
 
 # 4 Moves Ahead Min Max (4) vs Random (1)
 def experiment4():
-    return runExperiment(10000, 4, 1)
+    return runExperiment(100, 4, 1)
 
 # 5 Moves Ahead Min Max (5) vs Random (1)
 def experiment5():
-    return runExperiment(1000, 5, 1)
+    return runExperiment(100, 5, 1)
 
 # 6 Moves Ahead Min Max (6) vs Random (1)
 def experiment6():
-    return runExperiment(10000, 6, 1)
+    return runExperiment(100, 6, 1)
 
 # 7 Moves Ahead Min Max (7) vs Random (1)
 def experiment7():
-    return runExperiment(10000, 7, 1)
+    return runExperiment(100, 7, 1)
 
 # 3 Moves Ahead Min Max Pruning (8) vs Random (1)
 def experiment8():
-    return runExperiment(10, 8, 1)
+    return runExperiment(100, 8, 1)
+
+# 4 Moves Ahead Min Max Pruning (9) vs Random (1)
+def experiment8():
+    return runExperiment(100, 9, 1)
+
+# 5 Moves Ahead Min Max Pruning (10) vs Random (1)
+def experiment8():
+    return runExperiment(100, 10, 1)
 
 # Monte Carlo (100) vs Random (1)
 def experiment100():
