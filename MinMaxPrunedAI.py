@@ -4,14 +4,7 @@ class MinMaxPrunedAI:
         self.color = color
         self.numMovesAhead = numMovesAhead
         self.opponentColor = 'W' if self.color == 'B' else 'B'
-        self.pointMatrix =  [ [48,   6,  6,  6,  6,  6,   6, 48,], 
-           [ 6, -24, -4, -4, -4, -4, -24,  6,], 
-           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
-           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
-           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
-           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
-           [ 6, -24, -4, -4, -4, -4, -24,  6,], 
-           [48,   6,  6,  6,  6,  6,   6, 48,],]
+        self.pointMatrix = MoveUtil.getPointMatrix()
     
     def evaluationFunction(self, board):
         score = 0

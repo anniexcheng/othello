@@ -25,7 +25,8 @@ def printExperimentResults(number):
         5: experiment5,
         6: experiment6,
         7: experiment7,
-        8: experiment8
+        8: experiment8,
+        100: experiment100
     }
 
     experiment = switch.get(number, "")
@@ -65,7 +66,11 @@ def experiment7():
 def experiment8():
     return runExperiment(10, 8, 1)
 
+# Monte Carlo (100) vs Random (1)
+def experiment100():
+    return runExperiment(10, 100, 1)
+
 if __name__ == '__main__':
-    time = Timer(lambda: printExperimentResults(8))
+    time = Timer(lambda: printExperimentResults(100))
     print("%0.7f" % time.timeit(number=1))
     

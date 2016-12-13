@@ -26,6 +26,16 @@ def generatePossibleMoves(board, turn):
 					moveResults[(i,j)] = capturedSquares 
 	return moveResults
 
+def getPointMatrix(): 
+    return [ [48,   6,  6,  6,  6,  6,   6, 48,], 
+           [ 6, -24, -4, -4, -4, -4, -24,  6,], 
+           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
+           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
+           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
+           [ 6,  -4,  1,  1,  1,  1,  -4,  6,], 
+           [ 6, -24, -4, -4, -4, -4, -24,  6,], 
+           [48,   6,  6,  6,  6,  6,   6, 48,],]
+
 def getScore(board, playerXColor, playerYColor, N):
     countX = 0 
     countY = 0 
