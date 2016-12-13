@@ -81,7 +81,7 @@ def experiment100():
 
 # Simulated Annealing (100) vs Random (1)
 def experiment1000():
-    return runExperiment(1000, 1000, 1)
+    return runExperiment(100, 1000, 1)
 
 if __name__ == '__main__':
     time = Timer(lambda: printExperimentResults(1000))
