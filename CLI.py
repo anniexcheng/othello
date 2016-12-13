@@ -5,6 +5,7 @@ from OneMoveAI import OneMoveAI
 from MinMaxAI import MinMaxAI
 from MinMaxPrunedAI import MinMaxPrunedAI
 from MonteCarloAI import MonteCarloAI 
+from SimulatedAnnealingAI import SimulatedAnnealingAI
 
 def choosePlayer(option, color):
     option = int(option)
@@ -28,6 +29,8 @@ def choosePlayer(option, color):
         return MinMaxPrunedAI(color, 3)
     elif option == 100:
         return MonteCarloAI(color)
+    elif option == 1000:
+        return SimulatedAnnealingAI(color)
     else:
         option = input("Please enter a valid option: ")
         choosePlayer(option)
@@ -48,6 +51,7 @@ def othello(N, isExperiment, experimentX, experimentY):
         print("Enter 7 for AI that uses the Min-Max algorithm looking 7 moves ahead") 
         print("Enter 8 for AI that uses the Min-Max Pruning algorithm looking 3 moves ahead")
         print("Enter 100 for AI that uses the Monte Carlo algorithm")  
+        print("Enter 1000 for AI that uses the SimulatedAnnealingAI algorithm")  
         playerX = choosePlayer(input("Enter your option for Player X: "), playerXColor)
         playerY = choosePlayer(input("Enter your option for Player Y: "), playerYColor)
     else: 

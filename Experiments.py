@@ -26,7 +26,8 @@ def printExperimentResults(number):
         6: experiment6,
         7: experiment7,
         8: experiment8,
-        100: experiment100
+        100: experiment100,
+        1000: experiment1000
     }
 
     experiment = switch.get(number, "")
@@ -70,7 +71,11 @@ def experiment8():
 def experiment100():
     return runExperiment(10, 100, 1)
 
+# Simulated Annealing (100) vs Random (1)
+def experiment1000():
+    return runExperiment(1000, 1000, 1)
+
 if __name__ == '__main__':
-    time = Timer(lambda: printExperimentResults(100))
+    time = Timer(lambda: printExperimentResults(1000))
     print("%0.7f" % time.timeit(number=1))
     
