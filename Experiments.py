@@ -37,11 +37,11 @@ def printExperimentResults(number):
 
 # Random (1) vs Random (1)
 def experiment1():
-    return runExperiment(10000, 1, 1)
+    return runExperiment(1000, 1, 1)
 
 # One Move Naive Eval Function (2) vs Random (1)
 def experiment2():
-    return runExperiment(10000, 2, 1)
+    return runExperiment(1000, 2, 1)
 
 # 3 Moves Ahead Min Max (3) vs Random (1)
 def experiment3():
