@@ -39,7 +39,7 @@ def printExperimentResults(number):
 def experiment1():
     return runExperiment(10000, 1, 1)
 
-# One Move Naive Eval Function (2) vs Random (1)
+# Naive Eval Function (2) vs Random (1)
 def experiment2():
     return runExperiment(10000, 2, 1)
 
@@ -55,25 +55,41 @@ def experiment4():
 def experiment5():
     return runExperiment(100, 5, 1)
 
-# 6 Moves Ahead Min Max (6) vs Random (1)
+# 3 Moves Ahead Min Max (3) vs Naive Eval Function (2)
 def experiment6():
+    return runExperiment(1, 3, 2)
+
+# 4 Moves Ahead Min Max (4) vs Naive Eval Function (2)
+def experiment7():
+    return runExperiment(1, 4, 2)
+
+# 5 Moves Ahead Min Max (5) vs Naive Eval Function (2)
+def experiment8():
+    return runExperiment(1, 5, 2)
+
+# 3 Moves Ahead Min Max Pruning (6) vs Random (1)
+def experiment9():
     return runExperiment(100, 6, 1)
 
-# 7 Moves Ahead Min Max (7) vs Random (1)
-def experiment7():
+# 4 Moves Ahead Min Max Pruning (7) vs Random (1)
+def experiment10():
     return runExperiment(100, 7, 1)
 
-# 3 Moves Ahead Min Max Pruning (8) vs Random (1)
-def experiment8():
+# 5 Moves Ahead Min Max Pruning (8) vs Random (1)
+def experiment11():
     return runExperiment(100, 8, 1)
 
-# 4 Moves Ahead Min Max Pruning (9) vs Random (1)
-def experiment8():
-    return runExperiment(100, 9, 1)
+# 3 Moves Ahead Min Max Pruning (6) vs Naive Eval Function (2)
+def experiment12():
+    return runExperiment(1, 6, 2)
 
-# 5 Moves Ahead Min Max Pruning (10) vs Random (1)
-def experiment8():
-    return runExperiment(100, 10, 1)
+# 4 Moves Ahead Min Max Pruning (7) vs Naive Eval Function (2)
+def experiment13():
+    return runExperiment(1, 7, 2)
+
+# 5 Moves Ahead Min Max Pruning (8) vs Naive Eval Function (2)
+def experiment14():
+    return runExperiment(1, 8, 2)
 
 # Monte Carlo (100) vs Random (1)
 def experiment100():

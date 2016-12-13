@@ -22,14 +22,10 @@ def choosePlayer(option, color):
     elif option == 5:
         return MinMaxAI(color, 5)
     elif option == 6:
-        return MinMaxAI(color, 6)
-    elif option == 7:
-        return MinMaxAI(color, 7)
-    elif option == 8:
         return MinMaxPrunedAI(color, 3)
-    elif option == 9:
+    elif option == 7:
         return MinMaxPrunedAI(color, 4)
-    elif option == 10:
+    elif option == 8:
         return MinMaxPrunedAI(color, 5)
     elif option == 100:
         return MonteCarloAI(color)
@@ -51,11 +47,9 @@ def othello(N, isExperiment, experimentX, experimentY):
         print("Enter 3 for AI that uses the Min-Max algorithm looking 3 moves ahead") 
         print("Enter 4 for AI that uses the Min-Max algorithm looking 4 moves ahead") 
         print("Enter 5 for AI that uses the Min-Max algorithm looking 5 moves ahead") 
-        print("Enter 6 for AI that uses the Min-Max algorithm looking 6 moves ahead") 
-        print("Enter 7 for AI that uses the Min-Max algorithm looking 7 moves ahead") 
-        print("Enter 8 for AI that uses the Min-Max Pruning algorithm looking 3 moves ahead")
-        print("Enter 9 for AI that uses the Min-Max Pruning algorithm looking 4 moves ahead")
-        print("Enter 10 for AI that uses the Min-Max Pruning algorithm looking 5 moves ahead")
+        print("Enter 6 for AI that uses the Min-Max Pruning algorithm looking 3 moves ahead")
+        print("Enter 7 for AI that uses the Min-Max Pruning algorithm looking 4 moves ahead")
+        print("Enter 8 for AI that uses the Min-Max Pruning algorithm looking 5 moves ahead")
         print("Enter 100 for AI that uses the Monte Carlo algorithm")  
         print("Enter 1000 for AI that uses the SimulatedAnnealingAI algorithm")  
         playerX = choosePlayer(input("Enter your option for Player X: "), playerXColor)
