@@ -42,7 +42,7 @@ B = 3 Moves Ahead Min Max | W = Random
 | 2   | B: 9072, W: 928 | 38069.0639094 | 3 Moves Ahead Min Max
 | 3   | B: 9113, W: 887 | 37606.2559796 | 3 Moves Ahead Min Max
 
-3 Moves Ahead Min Max  AI has a 90.82% win rate.
+3 Moves Ahead Min Max AI has a 90.82% win rate.
 
 Each game takes on average 3.781 seconds.
 
@@ -58,7 +58,7 @@ B = 4 Moves Ahead Min Max | W = Random
 | 2   | B: 97, W: 3 | 3626.1859856 | 4 Moves Ahead Min Max
 | 3   | B: 95, W: 5 | 3595.4563586 | 4 Moves Ahead Min Max
 
-4 Moves Ahead Min Max  AI has a 95.67% win rate.
+4 Moves Ahead Min Max AI has a 95.67% win rate.
 
 Each game takes on average 36.222 seconds.
 
@@ -74,10 +74,57 @@ B = 5 Moves Ahead Min Max | W = Random
 | 2   | B: 92, W: 8 | 38314.4652632 | 5 Moves Ahead Min Max
 | 3   | B: 92, W: 8 | 39029.5983387 | 5 Moves Ahead Min Max
 
-5 Moves Ahead Min Max  AI has a 94.33% win rate.
+5 Moves Ahead Min Max AI has a 94.33% win rate.
 
 Each game takes on average 384.625 seconds.
 
+## Experiment 8: 3 Moves Ahead Min Max Pruning vs Random
+
+B = 3 Moves Ahead Min Max Pruning | W = Random
+
+(100 trials per run)
+
+| Run | Results      | Time        | Winner
+| --- | ------------ | ----------- | -----------------------------
+| 1   | B: 90, W: 10 | 371.3230456 | 3 Moves Ahead Min Max Pruning 
+| 2   | B: 86, W: 14 | 365.3254486 | 3 Moves Ahead Min Max Pruning 
+| 3   | B: 89, W: 11 | 356.6269122 | 3 Moves Ahead Min Max Pruning 
+
+3 Moves Ahead Min Max Pruning AI has a 88.33% win rate.
+
+Each game takes on average 3.644 seconds.
+
+## Experiment 9: 4 Moves Ahead Min Max Pruning vs Random
+
+B = 4 Moves Ahead Min Max Pruning | W = Random
+
+(100 trials per run)
+
+| Run | Results      | Time         | Winner
+| --- | ------------ | ------------ | -----------------------------
+| 1   | B: 90, W: 10 | 3519.2586111 | 4 Moves Ahead Min Max Pruning 
+| 2   | B: 92, W: 8  | 3461.8270923 | 4 Moves Ahead Min Max Pruning 
+| 3   | B: 91, W: 9  | 3466.9219156 | 4 Moves Ahead Min Max Pruning 
+
+4 Moves Ahead Min Max Pruning AI has a 91% win rate.
+
+Each game takes on average 34.827 seconds.
+
+## Experiment 10: 5 Moves Ahead Min Max Pruning vs Random
+
+B = 5 Moves Ahead Min Max Pruning | W = Random
+
+(100 trials per run)
+
+| Run | Results     | Time          | Winner
+| --- | ----------- | ------------- | -----------------------------
+| 1   | B: 94, W: 6 | 36452.1509229 | 5 Moves Ahead Min Max Pruning 
+| 2   | B: 95, W: 5 | 36409.3769924 | 5 Moves Ahead Min Max Pruning 
+| 3   | B: 98, W: 2 | 36285.4164915 | 5 Moves Ahead Min Max Pruning 
+
+5 Moves Ahead Min Max Pruning AI has a 95.67% win rate.
+
+Each game takes on average 363.823 seconds.
 
 
 
