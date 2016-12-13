@@ -26,6 +26,12 @@ def printExperimentResults(number):
         6: experiment6,
         7: experiment7,
         8: experiment8,
+        9: experiment9,
+        10: experiment10,
+        11: experiment11,
+        12: experiment12,
+        13: experiment13,
+        14: experiment14,
         100: experiment100,
         1000: experiment1000
     }
