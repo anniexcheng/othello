@@ -3,6 +3,7 @@ from collections import Counter
 from RandomMoveAI import RandomMoveAI
 import MoveUtil
 import Game 
+import random
 
 class MonteCarloAI:
     def __init__(self, color):
