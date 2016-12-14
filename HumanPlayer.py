@@ -4,8 +4,17 @@ class HumanPlayer:
         self.color = color
     
     def move(self, board, possibleMoves):
-        moves = input("Specify which square you would like to move e.g. 3 5 for (3,5) : ").split(' ')
-        chosenMove = (int(moves[0]), int(moves[1]))
+        moves, chosenMove = None, None
+
+        while True:
+            try:
+                moves = input("Specify which square you would like to move e.g. 3 5 for (3,5) : ").split(' ')
+                chosenMove = (int(moves[0]), int(moves[1]))
+            except (IndexError, ValueError):
+                print("Invalid Input: Input should be in format 3 5 for (3, 5)")
+            else: 
+                break
+
         if chosenMove in possibleMoves:
             MoveUtil.updateBoard(board, possibleMoves, chosenMove, self.color)
         else:
