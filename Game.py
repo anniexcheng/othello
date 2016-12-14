@@ -95,10 +95,9 @@ def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
         playerYCanMove, playerYMoves = canMove(board, playerY.color)
         
         if not (playerXCanMove or playerYCanMove):
-            drawBoard(board, N, othello, currentScore, None)
+            if not isExperiment: drawBoard(board, N, othello, currentScore, None)
             winner = endGame(playerX.color, playerY.color, board, N, isExperiment)
             break
-            # return endGame(playerX.color, playerY.color, board, N, isExperiment)
         elif playerXTurn and playerXCanMove:
             playerX.move(board, playerXMoves)
             playerXTurn = False
