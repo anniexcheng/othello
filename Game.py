@@ -1,4 +1,6 @@
 from MoveUtil import generatePossibleMoves, getScore
+from tkinter import *
+from OthelloBoard import OthelloBoard
 
 def initializeBoard(N):
     board = []
@@ -9,9 +11,12 @@ def initializeBoard(N):
     board[4][4] = 'W'
     board[3][4] = 'B'
     board[4][3] = 'B'
+
     return board 
 
-def drawBoard(board, N):
+def drawBoard(board, N, othello, score, playerXTurn):
+    othello.updateBoard(N, board, score, playerXTurn)
+
     HLINE = '  +---+---+---+---+---+---+---+---+'
     VLINE = '  |   |   |   |   |   |   |   |   |'
 
@@ -50,6 +55,7 @@ def canMove(board, color):
         return False, possibleMoves
     else:
         return True, possibleMoves
+
 # Given the color associated with the two players and the board,
 # determines who has won 
 def endGame(playerXColor, playerYColor, board, N, isExperiment):
@@ -66,15 +72,22 @@ def endGame(playerXColor, playerYColor, board, N, isExperiment):
         return playerYColor
     
 def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
+    if not isExperiment:
+        root = Tk()
+        root.resizable(width=False, height=False)
+        othello = OthelloBoard(root, N, board, playerX.color, playerXTurn)
+
     while True:
         if not isExperiment:
-            drawBoard(board, N)
             if playerXTurn:
                 print("Player X's turn!")
             else:
                 print("Player Y's turn!") 
+            
             currentScore = getScore(board, playerX.color, playerY.color, N)
             print("Current score: Player X: %s vs Player Y: %s" % (currentScore[0], currentScore[1]))
+
+            drawBoard(board, N, othello, currentScore, playerXTurn)
            
         playerXCanMove, playerXMoves = canMove(board, playerX.color)
         playerYCanMove, playerYMoves = canMove(board, playerY.color)
@@ -95,5 +108,8 @@ def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
             if not isExperiment:
                 print("Player X cannot move; Player Y will move this turn")
             playerY.move(board, playerYMoves)
+
+    if not isExperiment:
+        root.mainloop()
             
     
