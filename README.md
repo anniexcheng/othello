@@ -78,7 +78,7 @@ B = 5 Moves Ahead Min Max | W = Random
 
 Each game takes on average 384.625 seconds.
 
-## Experiment 8: 3 Moves Ahead Min Max Pruning vs Random
+## Experiment 10: 3 Moves Ahead Min Max Pruning vs Random
 
 B = 3 Moves Ahead Min Max Pruning | W = Random
 
@@ -94,7 +94,7 @@ B = 3 Moves Ahead Min Max Pruning | W = Random
 
 Each game takes on average 3.644 seconds.
 
-## Experiment 9: 4 Moves Ahead Min Max Pruning vs Random
+## Experiment 11: 4 Moves Ahead Min Max Pruning vs Random
 
 B = 4 Moves Ahead Min Max Pruning | W = Random
 
@@ -110,7 +110,7 @@ B = 4 Moves Ahead Min Max Pruning | W = Random
 
 Each game takes on average 34.827 seconds.
 
-## Experiment 10: 5 Moves Ahead Min Max Pruning vs Random
+## Experiment 12: 5 Moves Ahead Min Max Pruning vs Random
 
 B = 5 Moves Ahead Min Max Pruning | W = Random
 
@@ -125,6 +125,121 @@ B = 5 Moves Ahead Min Max Pruning | W = Random
 5 Moves Ahead Min Max Pruning AI has a 95.67% win rate.
 
 Each game takes on average 363.823 seconds.
+
+## Experiment 102: Monte Carlo vs 3 Moves Ahead MinMax
+
+B = Monte Carlo | W = 3 Moves Ahead MinMax
+
+(10 trials per run)
+
+| Run | Results     | Time         | Winner
+| --- | ----------- | ------------ | -----------
+| 1   | B: 10, W: 0 | 4004.5383061 | Monte Carlo
+
+Monte Carlo has a 100% win rate.
+
+Each game takes on average 400.454 seconds.
+
+## Experiment 103: Monte Carlo vs 4 Moves Ahead MinMax
+
+B = Monte Carlo | W = 4 Moves Ahead MinMax
+
+(10 trials per run)
+
+| Run | Results    | Time         | Winner
+| --- | ---------- | ------------ | -----------
+| 1   | B: 9, W: 1 | 3708.4793977 | Monte Carlo
+
+Monte Carlo has a 90% win rate.
+
+Each game takes on average 370.848 seconds.
+
+## Experiment 104: Monte Carlo vs 5 Moves Ahead MinMax
+
+B = Monte Carlo | W = 5 Moves Ahead MinMax
+
+(10 trials per run)
+
+| Run | Results    | Time         | Winner
+| --- | ---------- | ------------ | -----------
+| 1   | B: 9, W: 1 | 6867.8314918 | Monte Carlo
+
+Monte Carlo has a 90% win rate.
+
+Each game takes on average 686.783 seconds.
+
+## Experiment 1006: Simulated Annealing vs Random
+
+B = Simulated Annealing | W = Random
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------------
+| 1   | B: 8393, W: 1607 | 193.9548190 | Simulated Annealing
+
+Simulated Annealing has a 83.93% win rate.
+
+Each game takes on average 0.019 seconds.
+
+## Experiment 1007: Random vs Simulated Annealing
+
+B = Random | W = Simulated Annealing
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------------
+| 1   | B: 8799, W: 1201 | 179.9206823 | Simulated Annealing
+
+Simulated Annealing has a 87.99% win rate.
+
+Each game takes on average 0.018 seconds.
+
+## Experiment 1008: Simulated Annealing vs Naive Eval
+
+B = Simulated Annealing | W = Naive Eval
+
+(10000 trials per run)
+
+| Run | Results           | Time        | Winner
+| --- | ---------------- | ----------- | -------------------
+| 1   | B: 8041, W: 1959 | 257.7942597 | Simulated Annealing
+
+Simulated Annealing has a 80.41% win rate.
+
+Each game takes on average 0.026 seconds.
+
+## Experiment 1009: Naive Eval vs Simulated Annealing
+
+B = Naive Eval| W = Simulated Annealing 
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------------
+| 1   | B: 8129, W: 1871 | 248.6963340 | Simulated Annealing
+
+Simulated Annealing has a 81.29% win rate.
+
+Each game takes on average 0.025 seconds.
+
+## Minimax Experiments: Min Max Pruned AI Score Comparisons
+
+| AIs    | Score | Winner
+| -------| ----- | ------ 
+| 3 vs 4 | 18:46 | 4
+| 3 vs 5 | 8:51  | 5
+| 3 vs 6 | 28:36 | 6
+| 4 vs 3 | 38:26 | 4
+| 4 vs 5 | 44:20 | 4
+| 4 vs 6 | --:-- | --
+| 5 vs 3 | 44:20 | 5
+| 5 vs 4 | 8:51  | 4
+| 5 vs 6 | 22:42 | 6
+| 6 vs 3 | 30:34 | 3
+| 6 vs 4 | 53:11 | 6
+| 6 vs 5 | 43:21 | 6
 
 
 
