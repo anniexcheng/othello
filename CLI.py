@@ -6,7 +6,6 @@ from MinMaxAI import MinMaxAI
 from MinMaxPrunedAI import MinMaxPrunedAI
 from MonteCarloAI import MonteCarloAI 
 from SimulatedAnnealingAI import SimulatedAnnealingAI
-from tkinter import *
 
 def choosePlayer(option, color):
     option = int(option)
@@ -41,11 +40,7 @@ def choosePlayer(option, color):
         choosePlayer(option)
 
 def othello(N, isExperiment, experimentX, experimentY):
-    root = Tk()
-    root.resizable(width=False, height=False)
-    othello = OthelloBoard(root, N)
-    board, playerXColor, playerYColor, playerXTurn = othello.initializeGame(N, isExperiment)
-    # board, playerXColor, playerYColor, playerXTurn = Game.initializeGame(N, isExperiment)
+    board, playerXColor, playerYColor, playerXTurn = Game.initializeGame(N, isExperiment)
     
     if not isExperiment:
         print("You can either choose to play as a human or have a bot play")
@@ -69,10 +64,7 @@ def othello(N, isExperiment, experimentX, experimentY):
         playerX = choosePlayer(experimentX[0], experimentX[1])
         playerY = choosePlayer(experimentY[0], experimentY[1])
 
-    
-    return othello.playGame(N, board, playerX, playerY, playerXTurn, isExperiment)
-    
-    # return Game.playGame(N, board, playerX, playerY, playerXTurn, isExperiment)
+    return Game.playGame(N, board, playerX, playerY, playerXTurn, isExperiment)
        
 if __name__ == '__main__':
     othello(8, False, None, None)
