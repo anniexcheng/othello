@@ -39,7 +39,16 @@ def printExperimentResults(number):
         102: experiment102,
         103: experiment103,
         104: experiment104,
-        1000: experiment1000
+        1000: experiment1000,
+        1001: experiment1001,
+        1002: experiment1002,
+        1003: experiment1003,
+        1004: experiment1004,
+        1005: experiment1005,
+        1006: experiment1006,
+        1007: experiment1007,
+        1008: experiment1008,
+        1009: experiment1009
     }
 
     experiment = switch.get(number, "")
@@ -131,11 +140,47 @@ def experiment103():
 def experiment104():
     return runExperiment(10, 100, 9)
 
-# Simulated Annealing (100) vs Random (1)
+# Simulated Annealing (1000) vs 3 Moves Ahead MinMax Pruned (7)
 def experiment1000():
-    return runExperiment(100, 1000, 1)
+    return runExperiment(100, 1000, 7)
+
+# Simulated Annealing (1000) vs 4 Moves Ahead MinMax Pruned (8)
+def experiment1001():
+    return runExperiment(100, 1000, 8)
+
+# Simulated Annealing (1000) vs 5 Moves Ahead MinMax Pruned (9)
+def experiment1002():
+    return runExperiment(100, 1000, 9)
+
+# 3 Moves Ahead MinMax Pruned (7) vs Simulated Annealing (1000)
+def experiment1003():
+    return runExperiment(100, 7, 1000)
+
+# 4 Moves Ahead MinMax Pruned (8) vs Simulated Annealing (1000)
+def experiment1004():
+    return runExperiment(100, 8, 1000)
+
+# 5 Moves Ahead MinMax Pruned (9) vs Simulated Annealing (1000)
+def experiment1005():
+    return runExperiment(100, 9, 1000)
+
+# Simulated Annealing (1000) vs Random (1)
+def experiment1006():
+    return runExperiment(1000, 1000, 1)
+
+# Random (1) vs Simulated Annealing (1000)
+def experiment1007():
+    return runExperiment(1000, 1, 1000)
+
+# Simulated Annealing (1000) vs Naive Eval (2)
+def experiment1008():
+    return runExperiment(1000, 1000, 2)
+
+# Naive Eval (2) vs Simulated Annealing (1000)
+def experiment1009():
+    return runExperiment(1000, 2, 1000)
 
 if __name__ == '__main__':
-    time = Timer(lambda: printExperimentResults(102))
+    time = Timer(lambda: printExperimentResults(103))
     print("%0.7f" % time.timeit(number=1))
     
