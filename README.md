@@ -272,7 +272,7 @@ B = Naive Eval | W = Simulated Annealing
 
 | Run | Results          | Time        | Winner
 | --- | ---------------- | ----------- | -------------------
-| 1   | B: 8129, W: 1871 | 248.6963340 | Simulated Annealing
+| 1   | B: 1871, W: 8129 | 248.6963340 | Simulated Annealing
 
 Simulated Annealing has a 81.29% win rate.
 
