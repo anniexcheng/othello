@@ -32,6 +32,8 @@ def printExperimentResults(number):
         12: experiment12,
         13: experiment13,
         14: experiment14,
+        15: experiment15,
+        16: experiment16,
         100: experiment100,
         1000: experiment1000
     }
@@ -73,29 +75,37 @@ def experiment7():
 def experiment8():
     return runExperiment(1, 5, 2)
 
-# 3 Moves Ahead Min Max Pruning (6) vs Random (1)
+# 6 Moves Ahead Min Max (6) vs Naive Eval Function (2)
 def experiment9():
-    return runExperiment(100, 6, 1)
+    return runExperiment(1, 6, 2)
 
-# 4 Moves Ahead Min Max Pruning (7) vs Random (1)
+# 3 Moves Ahead Min Max Pruning (7) vs Random (1)
 def experiment10():
     return runExperiment(100, 7, 1)
 
-# 5 Moves Ahead Min Max Pruning (8) vs Random (1)
+# 4 Moves Ahead Min Max Pruning (8) vs Random (1)
 def experiment11():
     return runExperiment(100, 8, 1)
 
-# 3 Moves Ahead Min Max Pruning (6) vs Naive Eval Function (2)
+# 5 Moves Ahead Min Max Pruning (9) vs Random (1)
 def experiment12():
-    return runExperiment(1, 6, 2)
+    return runExperiment(100, 9, 1)
 
-# 4 Moves Ahead Min Max Pruning (7) vs Naive Eval Function (2)
+# 3 Moves Ahead Min Max Pruning (7) vs Naive Eval Function (2)
 def experiment13():
     return runExperiment(1, 7, 2)
 
-# 5 Moves Ahead Min Max Pruning (8) vs Naive Eval Function (2)
+# 4 Moves Ahead Min Max Pruning (8) vs Naive Eval Function (2)
 def experiment14():
     return runExperiment(1, 8, 2)
+
+# 5 Moves Ahead Min Max Pruning (9) vs Naive Eval Function (2)
+def experiment15():
+    return runExperiment(1, 9, 2)
+
+# 6 Moves Ahead Min Max Pruning (10) vs Naive Eval Function (2)
+def experiment16():
+    return runExperiment(1, 10, 2)
 
 # Monte Carlo (100) vs Random (1)
 def experiment100():
@@ -106,6 +116,6 @@ def experiment1000():
     return runExperiment(100, 1000, 1)
 
 if __name__ == '__main__':
-    time = Timer(lambda: printExperimentResults(1000))
+    time = Timer(lambda: printExperimentResults(11))
     print("%0.7f" % time.timeit(number=1))
     
