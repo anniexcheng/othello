@@ -30,7 +30,13 @@ class OthelloBoard(Frame):
         self.canvas.delete("all")
         self.board = board
 
-        turnText = "Player X's turn!" if playerXTurn else "Player Y's turn!"
+        turnText = ""
+
+        if playerXTurn is None:
+            turnText = "It's a tie!" if score[0] == score[1] else ("Player X won!" if score[0] > score[1] else "Player Y won!")
+        else:
+            turnText = "Player X's turn!" if playerXTurn else "Player Y's turn!"
+
         self.canvas.create_text(WIDTH/2, PADDING/2, anchor="center", text=turnText, font="-weight bold")
 
         playerX, playerY = ("Black", "White") if self.playerX.color == "B" else ("White", "Black")

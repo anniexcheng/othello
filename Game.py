@@ -72,6 +72,8 @@ def endGame(playerXColor, playerYColor, board, N, isExperiment):
         return playerYColor
     
 def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
+    winner = None
+
     if not isExperiment:
         root = Tk()
         root.resizable(width=False, height=False)
@@ -93,7 +95,10 @@ def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
         playerYCanMove, playerYMoves = canMove(board, playerY.color)
         
         if not (playerXCanMove or playerYCanMove):
-            return endGame(playerX.color, playerY.color, board, N, isExperiment)
+            drawBoard(board, N, othello, currentScore, None)
+            winner = endGame(playerX.color, playerY.color, board, N, isExperiment)
+            break
+            # return endGame(playerX.color, playerY.color, board, N, isExperiment)
         elif playerXTurn and playerXCanMove:
             playerX.move(board, playerXMoves)
             playerXTurn = False
@@ -111,5 +116,7 @@ def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
 
     if not isExperiment:
         root.mainloop()
+
+    return winner
             
     
