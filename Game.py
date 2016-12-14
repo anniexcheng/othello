@@ -75,7 +75,7 @@ def playGame(N, board, playerX, playerY, playerXTurn, isExperiment):
     if not isExperiment:
         root = Tk()
         root.resizable(width=False, height=False)
-        othello = OthelloBoard(root, N, board, playerX.color, playerXTurn)
+        othello = OthelloBoard(root, N, board, playerX, playerY, playerXTurn)
 
     while True:
         if not isExperiment:
