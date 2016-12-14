@@ -35,6 +35,9 @@ def printExperimentResults(number):
         15: experiment15,
         16: experiment16,
         100: experiment100,
+        101: experiment101,
+        102: experiment102,
+        103: experiment103,
         1000: experiment1000
     }
 
@@ -111,11 +114,27 @@ def experiment16():
 def experiment100():
     return runExperiment(10, 100, 1)
 
+# Monte Carlo (100) vs Naive (2)
+def experiment101():
+    return runExperiment(10, 100, 2)
+
+# Monte Carlo (100) vs MinMax (7)
+def experiment101():
+    return runExperiment(10, 100, 7)
+
+# Monte Carlo (100) vs MinMax (8)
+def experiment102():
+    return runExperiment(10, 100, 8)
+
+# Monte Carlo (100) vs MinMax (9)
+def experiment103():
+    return runExperiment(10, 100, 9)
+
 # Simulated Annealing (100) vs Random (1)
 def experiment1000():
     return runExperiment(100, 1000, 1)
 
 if __name__ == '__main__':
-    time = Timer(lambda: printExperimentResults(11))
+    time = Timer(lambda: printExperimentResults(101))
     print("%0.7f" % time.timeit(number=1))
     
