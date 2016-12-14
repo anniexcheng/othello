@@ -48,7 +48,9 @@ def printExperimentResults(number):
         1006: experiment1006,
         1007: experiment1007,
         1008: experiment1008,
-        1009: experiment1009
+        1009: experiment1009,
+        1010: experiment1010,
+        1011: experiment1011
     }
 
     experiment = switch.get(number, "")
@@ -146,11 +148,11 @@ def experiment1000():
 
 # Simulated Annealing (1000) vs 4 Moves Ahead MinMax Pruned (8)
 def experiment1001():
-    return runExperiment(100, 1000, 8)
+    return runExperiment(5, 1000, 8)
 
 # Simulated Annealing (1000) vs 5 Moves Ahead MinMax Pruned (9)
 def experiment1002():
-    return runExperiment(100, 1000, 9)
+    return runExperiment(10, 1000, 9)
 
 # 3 Moves Ahead MinMax Pruned (7) vs Simulated Annealing (1000)
 def experiment1003():
@@ -179,6 +181,12 @@ def experiment1008():
 # Naive Eval (2) vs Simulated Annealing (1000)
 def experiment1009():
     return runExperiment(1000, 2, 1000)
+
+def experiment1010():
+    return runExperiment(1000, 1000, 1001)
+
+def experiment1011():
+    return runExperiment(1000, 1001, 1000)
 
 if __name__ == '__main__':
     time = Timer(lambda: printExperimentResults(103))

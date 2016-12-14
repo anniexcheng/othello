@@ -35,6 +35,8 @@ def choosePlayer(option, color):
         return MonteCarloAI(color)
     elif option == 1000:
         return SimulatedAnnealingAI(color)
+    elif option == 1001:
+        return MinMaxAI(color, 1)
     else:
         option = input("Please enter a valid option: ")
         choosePlayer(option)
