@@ -168,6 +168,60 @@ Monte Carlo has a 90% win rate.
 
 Each game takes on average 686.783 seconds.
 
+## Experiment 1000: Simulated Annealing vs 3 Moves Min Max Pruned AI
+
+B = Simulated Annealing | W = 3 Moves Min Max Pruned AI
+
+(1000 trials per run)
+
+| Run | Results        | Time     | Winner
+| --- | -------------- | -------- | -------------------------
+| 1   | B: 229, W: 771 | 739.5246 | 3 Moves Min Max Pruned AI
+
+3 Moves Min Max Pruned AI has a 77.1% win rate.
+
+Each game takes on average 0.74 seconds.
+
+## Experiment 1001: Simulated Annealing vs 4 Moves Min Max Pruned AI
+
+B = Simulated Annealing | W = 4 Moves Min Max Pruned AI
+
+(100 trials per run)
+
+| Run | Results     | Time     | Winner
+| --- | ----------- | -------- | -------------------------
+| 1   | B: 8, W: 92 | -------- | 4 Moves Min Max Pruned AI
+
+4 Moves Min Max Pruned AI has a 92% win rate.
+
+## Experiment 1003:  3 Moves Min Max Pruned AI vs Simulated Annealing
+
+B = 3 Moves Min Max Pruned AI | W = Simulated Annealing 
+
+(1000 trials per run)
+
+| Run | Results        | Time        | Winner
+| --- | -------------- | ----------- | -------------------------
+| 1   | B: 805, W: 195 | 864.9745707 | 3 Moves Min Max Pruned AI
+
+3 Moves Min Max Pruned AI has a 80.5% win rate.
+
+Each game takes on average 0.867 seconds.
+
+## Experiment 1004: 4 Moves Min Max Pruned AI vs Simulated Annealing
+
+B = 4 Moves Min Max Pruned AI | W = Simulated Annealing
+
+(100 trials per run)
+
+| Run | Results     | Time        | Winner
+| --- | ----------- | ----------- | -------------------------
+| 1   | B: 93, W: 7 | 834.4100537 | 4 Moves Min Max Pruned AI
+
+4 Moves Min Max Pruned AI has a 93% win rate.
+
+Each game takes on average 8.344 seconds.
+
 ## Experiment 1006: Simulated Annealing vs Random
 
 B = Simulated Annealing | W = Random
@@ -212,7 +266,7 @@ Each game takes on average 0.026 seconds.
 
 ## Experiment 1009: Naive Eval vs Simulated Annealing
 
-B = Naive Eval| W = Simulated Annealing 
+B = Naive Eval | W = Simulated Annealing 
 
 (10000 trials per run)
 
