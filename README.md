@@ -241,6 +241,14 @@ Each game takes on average 0.025 seconds.
 | 6 vs 4 | 53:11 | 6
 | 6 vs 5 | 43:21 | 6
 
+## Minimax Baseline Experiments: Min Max Pruned AI vs Naive Eval Scores
+| AIs             | Score | Winner
+| --------------- | ----- | ------ 
+| 3 vs Naive Eval | 55:9  | 3
+| 4 vs Naive Eval | 28:36 | Naive Eval
+| 5 vs Naive Eval | 48:16 | 5
+| 6 vs Naive Eval | 53:11 | 6
+
 
 
 
