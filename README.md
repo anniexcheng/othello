@@ -240,7 +240,7 @@ B = Random | W = Simulated Annealing
 
 | Run | Results          | Time        | Winner
 | --- | ---------------- | ----------- | -------------------
-| 1   | B: 8799, W: 1201 | 179.9206823 | Simulated Annealing
+| 1   | B: 1201, W: 8799 | 179.9206823 | Simulated Annealing
 
 Simulated Annealing has a 87.99% win rate.
 
