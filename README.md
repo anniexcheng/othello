@@ -278,6 +278,86 @@ Simulated Annealing has a 81.29% win rate.
 
 Each game takes on average 0.025 seconds.
 
+## Experiment 1010: Simulated Annealing vs 1 Move MinMax (temperature = 0.5)
+
+B = Simulated Annealing  | W = 1 Move MinMax
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------
+| 1   | B: 3967, W: 6033 | 248.6963340 | 1 Move MinMax
+
+1 Move MinMax has a 60.33% win rate.
+
+Each game takes on average 0.03 seconds.
+
+## Experiment 1010 v2: Simulated Annealing vs 1 Move MinMax (temperature = 0.1)
+
+B = Simulated Annealing  | W = 1 Move MinMax
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------
+| 1   | B: 4039, W: 5961 | 253.5756809 | 1 Move MinMax
+
+1 Move MinMax has a 59.61% win rate.
+
+Each game takes on average 0.025 seconds.
+
+## Experiment 1010 v3: Simulated Annealing vs 1 Move MinMax (temperature = 0.75)
+
+B = Simulated Annealing  | W = 1 Move MinMax
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------
+| 1   | B: 3209, W: 6791 | ----------- | 1 Move MinMax
+
+1 Move MinMax has a 67.91% win rate.
+
+## Experiment 1011: 1 Move MinMax (0.5) vs Simulated Annealing
+
+B = 1 Move Minimax  | W = Simulated Annealing
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------------
+| 1   | B: 5969, W: 4031 | 248.6963340 | 1 Move MinMax
+
+1 Move MinMax has a 59.69% win rate.
+
+Each game takes on average 0.026 seconds.
+
+## Experiment 1011 v2: 1 Move MinMax (0.1) vs Simulated Annealing
+
+B = 1 Move Minimax  | W = Simulated Annealing
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------------
+| 1   | B: 5298, W: 4702 | 261.6754794 | 1 Move MinMax
+
+1 Move MinMax has a 52.98% win rate.
+
+Each game takes on average 0.026 seconds.
+
+## Experiment 1011 v3: 1 Move MinMax (0.75) vs Simulated Annealing
+
+B = 1 Move Minimax  | W = Simulated Annealing
+
+(10000 trials per run)
+
+| Run | Results          | Time        | Winner
+| --- | ---------------- | ----------- | -------------------
+| 1   | B: 6415, W: 3585 | ----------- | 1 Move MinMax
+
+1 Move MinMax has a 64.15% win rate.
+
 ## Minimax Experiments: Min Max Pruned AI Score Comparisons
 
 | AIs    | Score | Winner
