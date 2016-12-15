@@ -1,6 +1,6 @@
 # Othello
 
-This repository contains the code for an Othello game written in Python 3. It was created as the Fall 2016 CS 4701 (AI Prac) Project by Ji Hun Kim and Annie Cheng.
+This repository contains the code for an Othello game written in Python 3. It was created as a Fall 2016 CS 4701 (AI Prac) Project by Ji Hun Kim and Annie Cheng.
 
 ## Description
 
@@ -19,17 +19,16 @@ We implemented the following AIs:
 You should have Python 3 installed to run this program. Follow the steps below to run the project and play our Othello game! 
 
 1. Clone the project in your chosen directory.
-```
-git clone https://github.com/acheng96/othello.git
 
-```
+```git clone https://github.com/acheng96/othello.git```
+
 2. To play the game, run the following command while in the othello project folder.
-```
-python3 CLI.py
 
-```
+```python3 CLI.py```
+
 3. Follow the instructions in the command line to play against different AIs. Enjoy :)
 
+# Experiment Results
 
 ## Experiment 1: Random vs Random
 
