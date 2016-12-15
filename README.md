@@ -20,11 +20,15 @@ You should have Python 3 installed to run this program. Follow the steps below t
 
 1. Clone the project in your chosen directory.
 
-```git clone https://github.com/acheng96/othello.git```
+  ```bash
+  git clone https://github.com/acheng96/othello.git
+  ```
 
 2. To play the game, run the following command while in the othello project folder.
 
-```python3 CLI.py```
+  ```bash
+  python3 CLI.py
+  ```
 
 3. Follow the instructions in the command line to play against different AIs. Enjoy :)
 
